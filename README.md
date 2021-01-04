@@ -29,7 +29,8 @@ python3 -m picoCTF <options>
 The following `options` are available:
 ```bash
 --help				# shows options
---decode ".... . .-.. .-.. ---" --morse		# decodes morse code
+--decode ".... . .-.. .-.. ---" --morse		
+				# decodes morse code
 --decode qwerty --offset 1	# decodes "qwerty", assumed to be caeser cipher and 
 				# offset/shifted by 1
 --decode qwerty --table picoctf/cryptography/table.txt solvecrypto    
@@ -47,10 +48,10 @@ The following `options` are available:
 --ascii 1010010 --base 2    	# converts binary number to ascii characters
 --ascii TWFu --base 64 --base64 # converts "TWFu" from base64 encoding to ascii characters
 --find picoctf/forensics/garden.jpg    
-				# finds any flags in the form picoCTF{....} from garden.jpg
+				# finds flags in the form picoCTF{....} from garden.jpg
 				# using strings and grep (unix commands)
 --lsb picoctf/forensics/buildings.png 1    
-				# finds any messages hidden within buildings.png using least significant bit
+				# finds messages hidden within buildings.png using least significant bit
 ```
 
 # License
