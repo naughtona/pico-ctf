@@ -57,7 +57,7 @@ def decode_morse(code):
     rgx = re.compile(r'\.|\-|\s')
     processed_code = "".join(rgx.findall(code)).split()
     try:
-        return "".join([next(k for k,v in MORSE.items() if v==c) for c in processed_code])
+        return "".join([next(k for k,v in MORSE.items() if v==c) for c in processed_code]).lower()
     except:
         return "Error: code includes foreign morse. Try again."
 

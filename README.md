@@ -13,18 +13,28 @@ Partipants tackle a set of challenges from six domains of cybersecurity:
 - Binary Exploitation
 
 ## Example use
-Below are two examples of how you can use this tool.
-1. **Caeser cipher**: Decode a message
+Below are just four examples of how you might use this tool.
+1. **Morse Code**: Decode a message
 ```bash
-~ code="13 25 5 24 1 13 16 12 5"
-~ python3 -m picoCTF --decode "$code" --offset -1
->>> myexample
+~ python3 -m picoCTF --decode ".... . .-.. .-.. ---" --morse
+>>> hello
 ```
-2. **Stenography**: Find a message hidden in the least significant bits of an image
+2. **Caeser cipher**: Decode a message
+```bash
+~ code="6 3 10 10 13"
+~ python3 -m picoCTF --decode "$code" --offset 1
+>>> hello
+```
+3. **Stenography**: Find a message hidden in the least significant bits of an image
 ```bash
 ~ python3 -m picoCTF --lsb picoCTF/forensics/buildings.png 1
 >>> picoCTF{h1d1ng_1n_th3_b1t5}
 ```
+4. **String search**: Find a message buried amongst unintelligible or obscure image/text files
+```bash
+~ python3 -m picoCTF --find picoCTF/forensics/garden.jpg
+>>> picoCTF{more_than_m33ts_the_3y3eBdBd2cc}
+
 
 ## Getting started
 After cloning, run:
@@ -40,7 +50,7 @@ python3 -m picoCTF <options>
 The following `options` are available:
 ```bash
 --help						# shows options
---decode ".... . .-.." --morse			# decodes morse code
+--decode <morse code string> --morse		# decodes <morse code string>
 --decode <string> --offset <int>		# decodes <string> using caeser cipher and offset <int>
 --decode <string> --table <filepath> <key>	# decodes <string> using table at <filepath> and <key>
 --encode <string> --morse    			# encodes morse code
