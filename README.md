@@ -13,11 +13,17 @@ Partipants tackle a set of challenges from six domains of cybersecurity:
 - Binary Exploitation
 
 ## Example use
-The below example demonstrates how you can use this tool to decode some caeser cipher.
+Below are two examples of how you can use this tool.
+1. **Caeser cipher**: Decode a message
 ```bash
 ~ code="13 25 5 24 1 13 16 12 5"
 ~ python3 -m picoCTF --decode "$code" --offset -1
-myexample
+>>> myexample
+```
+2. **Stenography**: Find a message hidden in the least significant bits of an image
+```bash
+~ python3 -m picoCTF --lsb picoCTF/forensics/buildings.png 1
+>>> picoCTF{h1d1ng_1n_th3_b1t5}
 ```
 
 ## Getting started
