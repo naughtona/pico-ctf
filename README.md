@@ -2,7 +2,7 @@
 A Python package that aims to help picoCTF contestants in their quest to find all the flags.
 
 ## What is picoCTF?
-picoCTF is a Capture The Flag (CTF) cybersecurity hacking competition for middle and high school students, created by security experts at Carnegie Mellon University.
+[picoCTF](https://picoctf.org/) is a [Capture The Flag (CTF)](https://en.wikipedia.org/wiki/Capture_the_flag#Computer_security) cybersecurity hacking competition for middle and high school students, created by security experts at Carnegie Mellon University.
 
 Partipants tackle a set of challenges from six domains of cybersecurity:
 - General skills
@@ -23,35 +23,34 @@ myexample
 ## Getting started
 After cloning, run:
 ```bash
+cd pico-ctf
+```
+
+Now that you are in the root directory, you can use the helper tool as follows:
+```bash
 python3 -m picoCTF <options>
 ```
 
 The following `options` are available:
 ```bash
---help				# shows options
---decode ".... . .-.. .-.. ---" --morse		
-				# decodes morse code
---decode qwerty --offset 1	# decodes "qwerty", assumed to be caeser cipher and 
-				# offset/shifted by 1
---decode qwerty --table picoctf/cryptography/table.txt solvecrypto    
-				# decodes "qwerty" given table.txt and key "solvecrypto"
---encode hello --morse    	# encodes morse code
---encode hello --offset -1    	# encodes "hello", assumed to be caeser cipher and 
-				# offset/shifted by -1
---encode hello --table picoctf/cryptography/table.txt solvecrypto
-				# encodes "hello" given table.txt and key "solvecrypto"
---encode myexample --offset 1 --numeric    
-				# encodes "myexample" in numbers, assumed to be caeser
-				# cipher and offset/shifted by 1
---dec-to-binary 10    		# converts decimal 10 to its binary number
---hex-to-decimal 0x1F    	# converts hexadecimal 0x70 to its decimal number
---ascii 1010010 --base 2    	# converts binary number to ascii characters
---ascii TWFu --base 64 --base64 # converts "TWFu" from base64 encoding to ascii characters
---find picoctf/forensics/garden.jpg    
-				# finds flags in the form picoCTF{....} from garden.jpg
-				# using strings and grep (unix commands)
---lsb picoctf/forensics/buildings.png 1    
-				# finds messages hidden within buildings.png using least significant bit
+--help						# shows options
+--decode ".... . .-.." --morse			# decodes morse code
+--decode <string> --offset <int>		# decodes <string> using caeser cipher and offset <int>
+--decode <string> --table <filepath> <key>	# decodes <string> using table at <filepath> and <key>
+--encode <string> --morse    			# encodes morse code
+--encode <string> --offset <int> 		# encodes <string> using caeser cipher and offset <int>
+--encode <string> --table <filepath> <key>	# encodes <string> using table at <filepath> and <key>
+--encode <string> --offset 1 --numeric 		# numerically encodes <string> using caeser cipher and 
+						# offset <int>
+--dec-to-binary <decimal int>			# converts <decimal int> to its binary number
+--hex-to-decimal <hexadecimal>			# converts <hexadecimal> to its decimal number
+--ascii <binary number> --base <int>    	# converts <binary number> to ascii chars in base <int>
+--ascii <base64 sequence> --base <int> --base64 # converts <base64 sequence> to ascii chars in base <int>
+--find <filepath>		  		# finds flags in the form picoCTF{...} from <filepath>
+						# using strings and grep (unix commands)
+--lsb <image filepath> <int> 			# finds messages hidden within <image filepath> using 
+						# least significant bit algorithm with number of bits
+						# as <int>
 ```
 
 # License
