@@ -34,6 +34,7 @@ Below are just four examples of how you might use this tool.
 ```bash
 ~ python3 -m picoCTF --find picoCTF/forensics/garden.jpg
 >>> picoCTF{more_than_m33ts_the_3y3eBdBd2cc}
+```
 
 
 ## Getting started
